@@ -1,6 +1,61 @@
+/* DIVS PRINCIPAIS */
 #login, #filmes, #sessao, #lugares, #ingresso, #finalizar{
     width: 100%;
-    height: 100vh;
+    height: auto;
     padding: 20px; 
 }
+
+#login{
+    width: 100%;
+    height: 100vh;
+    padding: 20px;
+}
+
+#filmes, #lugares, #finalizar{
+    background: #222;
+    color: #fff;
+}
+
+/* OUTROS */
+
+/* FILMES */
+
+.filme{
+    height: 400px;
+    overflow: hidden;
+    padding: 0;
+}
+
+.filme .poster{
+    width: 100%;
+    transition: 0.2s;
+}
+
+.filme .poster:hover{
+    -webkit-transform: scale(1.2);
+    transition: 0.5s;
+}
+
+.filme .info-filme{
+    z-index: 100;
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    color: #fff;
+    font-size: 20px;
+    font-weight: bold;
+    padding: 5px;
+    background-image: -webkit-gradient(
+        linear, left top, left bottom, from(rgba(0,0,0,0)),
+        to(rgba(0,0,0,1)), color-stop(.4, #000)
+    );
+}
+
+.filme .info-filme img.classif{
+    float: right;
+    right: 0;
+    width: 30px;
+    height: 30px;
+}
+
 
