@@ -24,6 +24,7 @@
     height: 400px;
     overflow: hidden;
     padding: 0;
+    border: 10px solid transparent;
 }
 
 .filme .poster{
@@ -33,7 +34,7 @@
 
 .filme .poster:hover{
     -webkit-transform: scale(1.2);
-    transition: 0.5s;
+    transition: 0.2s;
 }
 
 .filme .info-filme{
@@ -59,3 +60,10 @@
 }
 
 
+/* lugares */
+
+
+.table tr td:hover{
+    background: aqua;
+    margin: 2px;
+}
