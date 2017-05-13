@@ -1,3 +1,6 @@
+@import url('https://fonts.googleapis.com/css?family=Bungee+Inline|Didact+Gothic|Montserrat|Poppins');
+
+
 /* DIVS PRINCIPAIS */
 #login, #filmes, #sessao, #lugares, #ingresso, #finalizar{
     width: 100%;
@@ -62,8 +65,71 @@
 
 /* lugares */
 
-
+.table tr td{
+    font-family: 'Bungee Inline', cursive;
+}
 .table tr td:hover{
     background: aqua;
     margin: 2px;
+}
+
+
+/* INFO/SINOPSE */
+.logo-background{
+    margin-top:20px;
+    width: 340px;
+    height: 443px;
+}
+.titulo-filme{
+    font-size:30px;
+    font-family: 'Bungee Inline', cursive;
+    color:#696969;
+    
+}
+
+.sinopse{
+    font-size: 16px;
+    font-family: 'Montserrat', sans-serif;
+}
+.sinopse ul{
+    padding:0;
+    list-style:none;
+    -webkit-margin-before: 1em;
+    -webkit-margin-after: 1em;
+    -webkit-margin-start: 0px;
+    -webkit-margin-end: 0px;
+    -webkit-padding-start: 40px;
+}
+.description{
+    font-size: 14px;
+    margin-top:20px;
+}
+.genero-filme{
+    border: 1px solid #000;
+    font-family: 'Poppins', sans-serif;
+    padding:5px;
+    font-size:12px;
+    margin-right:3px;
+}
+.classificacao-filme{
+    border-radius:4px;
+    background: #ffcb05;
+    color:white;
+    font-size: 12px;
+    font-family: 'Bungee Inline', cursive;
+    padding:3px;
+    margin-right:3px;
+    margin-left:3px;
+}
+.duracao-filme{
+    font-weight:bold;
+    font-size: 14px;
+    font-family: 'Didact Gothic', sans-serif;
+}
+.txt2 {
+    float:left;
+    padding-left:10px;
+    margin-bottom:10px;
+    font-size: 16px;
+    font-family: 'Didact Gothic', sans-serif;
 }
