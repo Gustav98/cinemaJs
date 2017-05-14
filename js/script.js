@@ -44,4 +44,28 @@ function main(){
     table.appendChild(thead);
     table.appendChild(tbody);
     document.getElementById("tabelaLugares").appendChild(divTable);
+    
+    // CLICK DOS LUGARES
+    
+    var lugares = document.querySelectorAll("#tabelaLugares table tr td");
+    var lugaresArr = Array.prototype.slice.call(lugares);
+    lugaresArr.forEach(function(x){
+        x.addEventListener("click", function(e){
+            var ul = document.getElementById("lugaresEscolhidos");
+            if(x.title === "escolhido"){
+                x.style.backgroundColor = "black";
+                x.removeAttribute("title");
+                var li = document.getElementById("l"+x.id);
+                ul.removeChild(li);
+            }
+            else{
+                var li = document.createElement("li");
+                li.setAttribute("id", "l"+x.id);
+                li.innerHTML = x.id;
+                ul.appendChild(li);
+                x.style.backgroundColor = "red";
+                x.setAttribute("title", "escolhido");
+            }
+        });
+    });
 }

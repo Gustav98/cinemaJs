@@ -67,6 +67,7 @@
 
 .table tr td{
     font-family: 'Bungee Inline', cursive;
+    background: black;
 }
 .table tr td:hover{
     background: aqua;
