@@ -65,11 +65,11 @@
 
 /* lugares */
 
-.table tr td{
+#lugares .table tr td{
     font-family: 'Bungee Inline', cursive;
-    background: black;
+    background-color: navy;
 }
-.table tr td:hover{
+#lugares .table tr td:hover{
     background: aqua;
     margin: 2px;
 }
