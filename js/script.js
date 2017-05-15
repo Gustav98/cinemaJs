@@ -2,6 +2,13 @@ window.onload = main;
 
 function main(){
     
+    // variavel dos filmes
+    var filme = [{"codigo":"1","nome":"Guardiões da Galaxia vol.2","cartaz":"cartaz/gdg.jpg","classificacao":"12","genero":"Aventura","duracao":"137","diretor":"James Gunn","elenco":"Chris Pratt, Vin Diesel, Zoe Saldana, Dave Batista, Bradley Cooper, Karen Gillan, Pom Klementieff, Michael Rooker","sinopse":"Os Guardiões precisam lutar para manter sua recém descoberta família unida, enquanto descobrem os mistérios sobre o verdadeiro pai de Peter Quill. Antigos inimigos se tornam aliados e personagens conhecidos e amados dos quadrinhos virão ao auxílio dos nossos heróis, enquanto o Universo Cinematográfico da Marvel continua se expandindo."},
+                 {"codigo":"2","nome":"Alien Covenant","cartaz":"cartaz/ac.jpg","classificacao":"18","genero":"Terror/Suspense","duracao":"137","diretor":"James Gunn","elenco":"Chris Pratt, Vin Diesel, Zoe Saldana, Dave Batista, Bradley Cooper, Karen Gillan, Pom Klementieff, Michael Rooker","sinopse":""},
+                 {"codigo":"3","nome":"Guardiões da Galaxia vol.2","cartaz":"cartaz/gdg.jpg","classificacao":"12","genero":"Aventura","duracao":"137","diretor":"James Gunn","elenco":"Chris Pratt, Vin Diesel, Zoe Saldana, Dave Batista, Bradley Cooper, Karen Gillan, Pom Klementieff, Michael Rooker","sinopse":""},
+                 {"codigo":"4","nome":"Guardiões da Galaxia vol.2","cartaz":"cartaz/gdg.jpg","classificacao":"12","genero":"Aventura","duracao":"137","diretor":"James Gunn","elenco":"Chris Pratt, Vin Diesel, Zoe Saldana, Dave Batista, Bradley Cooper, Karen Gillan, Pom Klementieff, Michael Rooker","sinopse":""},
+                 {"codigo":"5","nome":"Guardiões da Galaxia vol.2","cartaz":"cartaz/gdg.jpg","classificacao":"12","genero":"Aventura","duracao":"137","diretor":"James Gunn","elenco":"Chris Pratt, Vin Diesel, Zoe Saldana, Dave Batista, Bradley Cooper, Karen Gillan, Pom Klementieff, Michael Rooker","sinopse":""}];
+    
     // constroi tabela de assentos
     var divTable = document.createElement("div");
     var table = document.createElement("table");
