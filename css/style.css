@@ -191,6 +191,7 @@
 }
 
 /*Finalizar*/
+
 .card{
     padding:3px;
     font-family: 'Bitter', serif;
@@ -203,4 +204,8 @@
     font-family: 'Bitter', serif;
     font-size: 16px;
     border:10px solid #222;
+}
+
+#boleto{
+    display: none;
 }

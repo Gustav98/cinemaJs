@@ -76,4 +76,40 @@ function main(){
             }
         });
     });
+    
+    // FINALIZAR
+    
+    var btnCartao = document.getElementById("btnCartao");
+    var btnBoleto = document.getElementById("btnBoleto");
+    var divCartao = document.getElementById("cartao");
+    var divBoleto = document.getElementById("boleto");
+    
+    btnCartao.addEventListener("click", function(e){
+        divBoleto.style.display = "none"; 
+        divCartao.style.display = "block";
+    });
+    
+    btnBoleto.addEventListener("click", function(e){
+        divCartao.style.display = "none"; 
+        divBoleto.style.display = "block";
+    });
+    
+    
+    // FORMAS DE PAGAMENTO
+    
+    var mesCartao = document.getElementById("mesCartao");
+    var anoCartao = document.getElementById("anoCartao");
+    var meses = ["mês",1,2,3,4,5,6,7,8,9,10,11,12];
+    var ano = ["ano",2017,2018,2019,2020,2021,2022,2023,2024,2025];
+    options(meses, mesCartao);
+    options(ano, anoCartao);
+    
+    function options(array, target){
+       array.forEach(function(x){
+           var option = document.createElement("option");
+           option.setAttribute("value", x);
+           option.innerHTML = x;
+           target.appendChild(option);
+        }); 
+    }
 }

@@ -229,10 +229,22 @@
                     </div>
                     <div class="col-md-4">
                         <h2>Forma de Pagamento</h2>
-                        <button class="btn btn-default glyphicon glyphicon-credit-card active"></button>
+                        <button class="btn btn-default glyphicon glyphicon-credit-card active" id="btnCartao"></button>
                         <span class="card">Cartão</span>
-                        <button class="btn btn-default glyphicon glyphicon-barcode"></button>
+                        <button class="btn btn-default glyphicon glyphicon-barcode" id="btnBoleto"></button>
                         <span class="boleto">Boleto</span>
+                        <hr>
+                        <div id="cartao">
+                            <p><input type="text" id="numCartao" placeholder="Numero do Cartão de Crédito" class="form-control" required></p>
+                            <p><input type="text" id="nomeCartao" placeholder="Nome como esta no Cartão" class="form-control" required></p>
+                            <p><select id="mesCartao" class="form-control" required></select></p>
+                            <p><select id="anoCartao" class="form-control" required></select></p>
+                            <p><input type="text" id="cvv" class="form-control" placeholder="CVV" maxlength="3" required></p>
+                            <p><button class="btn btn-primary form-control">Finalizar</button></p>
+                        </div>
+                        <div id="boleto">
+                            <p>Imprimir Boleto</p>
+                        </div>
                     </div>
                 </div>
             </div>
