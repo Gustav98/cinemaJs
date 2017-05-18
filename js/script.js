@@ -113,3 +113,66 @@ function main(){
         }); 
     }
 }
+
+
+// API DO FACEBOOK
+window.fbAsyncInit = function() {
+    // FB JavaScript SDK configuration and setup
+    FB.init({
+      appId      : '1137381459740651', // FB App ID
+      cookie     : true,  // enable cookies to allow the server to access the session
+      xfbml      : true,  // parse social plugins on this page
+      version    : 'v2.9' // use graph api version 2.8
+    });
+    
+    // Check whether the user already logged in
+    FB.getLoginStatus(function(response) {
+        if (response.status === 'connected') {
+            //display user data
+            getFbUserData();
+        }
+    });
+};
+
+(function(d, s, id){
+ var js, fjs = d.getElementsByTagName(s)[0];
+ if (d.getElementById(id)) {return;}
+ js = d.createElement(s); js.id = id;
+ js.src = "//connect.facebook.net/en_US/sdk.js";
+ fjs.parentNode.insertBefore(js, fjs);
+}(document, 'script', 'facebook-jssdk'));
+
+// Login pelo Facebook
+function fbLogin() {
+    FB.login(function (response) {
+        if (response.authResponse) {
+            // Pega e Mostra informações
+            getFbUserData();
+        } else {
+            document.getElementById('status').innerHTML = 'Usuário não autorizado';
+        }
+    }, {scope: 'email'});
+}
+
+// Pega as informações do usuário
+function getFbUserData(){
+    FB.api('/me', {fields: 'id,first_name,last_name,picture'},
+    function (response) {
+        var img = document.createElement("img");
+        img.setAttribute('class', 'img-responsive thumbnail');
+        document.getElementById('fbLink').setAttribute("onclick","fbLogout()");
+        document.getElementById('fbLink').innerHTML = 'Sair do Facebook';
+        document.getElementById('status').innerHTML = 'Bem-vindo, ' + response.first_name + '!';
+        document.getElementById('foto').innerHTML = '<img src="'+response.picture.data.url+'" class="img-responsive thumbnail"/>';
+    });
+}
+
+// Logout from facebook
+function fbLogout() {
+    FB.logout(function() {
+        document.getElementById('fbLink').setAttribute("onclick","fbLogin()");
+        document.getElementById('fbLink').innerHTML = '<img src="img/loginfb.png"/>';
+        document.getElementById('status').innerHTML = '';
+        document.getElementById('foto').innerHTML = '';
+    });
+}
