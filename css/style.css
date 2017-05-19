@@ -110,23 +110,22 @@
 #lugares .table th{
     border: none;
     text-align: center;
-    
 }
 
 #lugares .table tr td{
-    font-family: 'Bungee Inline', cursive;
+    font-family: 'Montserrat', sans-serif;
     background-color: black;
-    padding: 10px;
-    border: 3px solid #222;
+    padding: 15px;
     color: #000;
-    /*background: radial-gradient(circle closest-side,#000 0%,#000 100%,rgba(0,1,0,0) 100%);*/
+    border:5px solid #222;
     text-align: center;
+    background: radial-gradient(circle closest-side,#000 0%,#000 98%,rgba(0,0,0,0) 100%);
+    font-weight: bold;
 }
 #lugares .table tr td:hover{
-    background: red !important;
     cursor: pointer;
     color: #fff !important;
-    /*background: radial-gradient(circle closest-side,#f00 0%,#f00 100%,rgba(0,1,0,0) 100%) !important;*/
+    background: radial-gradient(circle closest-side,#8B0000 0%,#8B0000 98%,rgba(0,0,0,0) 100%) !important;
 }
 
 
@@ -198,6 +197,11 @@
     font-size: 16px;
     border:10px solid #222;
 }
+#btnCartao{
+    padding:10px;
+    border:2px solid white;
+}
+
 
 .boleto{
     padding:3px;
@@ -205,7 +209,53 @@
     font-size: 16px;
     border:10px solid #222;
 }
+#btnBoleto{
+    padding:10px;
+    border:2px solid black;
+    
+}
 
 #boleto{
     display: none;
+}
+.press{
+    padding:3px;
+    font-family: 'Bitter', serif;
+    font-size: 16px;
+    border:10px solid #222;
+}
+#btnImprimir{
+    padding:10px;
+    border:2px solid white;
+}
+
+
+.info-compra h2{
+    font-family: 'Bitter', serif;
+    font-size: 30px;
+    padding:20px;
+}
+
+.info-compra h2:hover{
+    box-shadow: 4px 6px 8px rgba(0,0,0,.4);
+    transition:.4s
+}
+
+.info-compra p>b{
+    font-family: 'Bitter', serif;
+    font-size: 25px;
+}
+
+.info-compra p{
+    font-family: 'Bitter', serif;
+    font-size: 20px;
+    padding:20px;
+}
+.info-compra p:hover{
+    box-shadow: 4px 6px 8px rgba(0,0,0,.4);
+    transition:.4s 
+}
+.filme-compra{
+    width:350px;
+    height:auto;
 }
