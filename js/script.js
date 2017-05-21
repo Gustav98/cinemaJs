@@ -25,8 +25,11 @@ function main(){
         
         col.setAttribute("class", "col-lg-3 col-sm-4 col-xs-6 filme");
         col.setAttribute("id", x.codigo);
+        col.addEventListener("click", function(e){
+            sessao(this.id);
+        });
         infoFilme.setAttribute("class", "info-filme");
-        classif.setAttribute("class", "classification-12");
+        classif.setAttribute("class", "classification-"+x.classificacao);
         imgFilme.setAttribute("src", "img/"+x.cartaz);
         imgFilme.setAttribute("class", "img-responsive poster");
         imgFilme.setAttribute("alt", x.nome);
@@ -44,7 +47,52 @@ function main(){
     
     /**************** DIV SESSAO ****************/
     
-    
+    function sessao(id){
+        var infos = document.getElementById("infos");
+        filmes.forEach(function(x){
+            if(x.codigo === id){
+                var img = document.createElement("img");
+                var tituloFilme = document.createElement("h1");
+                var genero = document.createElement("span");
+                var classif = document.createElement("span");
+                var duracao = document.createElement("span");
+                var description = document.createElement("div");
+                var sinopse = document.createElement("p");
+                var diretor = document.createElement("p");
+                var elenco = document.createElement("p");
+                
+                img.setAttribute("src", "img/"+x.cartaz);
+                img.setAttribute("alt", x.nome);
+                img.setAttribute("class", "img-responsive");
+                tituloFilme.setAttribute("class", "titulo-filme");
+                genero.setAttribute("class", "genero-filme");
+                classif.setAttribute("class", "classificacao-filme");
+                duracao.setAttribute("class", "duracao-filme");
+                description.setAttribute("class", "description");
+                
+                tituloFilme.innerHTML = x.nome;
+                genero.innerHTML = x.genero;
+                classif.innerHTML = x.classificacao;
+                duracao.innerHTML = x.duracao+" min.";
+                sinopse.innerHTML = x.sinopse;
+                diretor.innerHTML = "<strong class='d-block'>Diretor </strong>"+x.diretor;
+                elenco.innerHTML = "<strong class='d-block'>Elenco </strong>"+x.elenco;
+                
+                document.getElementById("sessaoImg").innerHTML = "";
+                document.getElementById("sessaoInfo").innerHTML = "";
+                
+                document.getElementById("sessaoImg").appendChild(img);
+                document.getElementById("sessaoInfo").appendChild(tituloFilme);
+                document.getElementById("sessaoInfo").appendChild(genero);
+                document.getElementById("sessaoInfo").appendChild(classif);
+                document.getElementById("sessaoInfo").appendChild(duracao);
+                document.getElementById("sessaoInfo").appendChild(description);
+                description.appendChild(sinopse);
+                description.appendChild(diretor);
+                description.appendChild(elenco);
+            }
+        });
+    }
     
     /**************** DIV LUGARES ****************/
     
