@@ -13,6 +13,9 @@
     height: 100vh;
     padding: 20px;
     font-family: 'Bitter', serif;
+    background: url(../img/cinema.jpg) fixed;
+    background-size:cover;
+    color:white;
 }
 
 #filmes, #lugares, #finalizar{
@@ -23,6 +26,37 @@
 
 /* OUTROS */
 
+/*LOGIN*/
+#status{
+    font-size:30px !important;
+    font-family: 'Bitter', serif !important;
+    font-weight:bold; 
+}
+.intro{
+    width:100%;
+    color:white;
+    text-align: center;
+    margin-top:50px;
+    font-size:25px;
+    font-weight:bold;
+    font-family: 'Poppins', sans-serif;
+}
+
+.intro-btn{
+    padding:20px;
+    font-size:14px; 
+    background-color:#80000;
+    color:white;
+}
+
+.intro-btn:hover{
+    opacity: .8;
+    transition:.3s;
+}
+.intro small{
+    font-size:19px;
+    color:snow;
+}
 /* FILMES */
 
 .filme{

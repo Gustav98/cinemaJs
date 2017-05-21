@@ -87,16 +87,22 @@ function main(){
     var divCartao = document.getElementById("cartao");
     var divBoleto = document.getElementById("boleto");
     
+    
     btnCartao.addEventListener("click", function(e){
         divBoleto.style.display = "none"; 
         divCartao.style.display = "block";
+        btnCartao.setAttribute("class", "btn btn-info btn-lg glyphicon glyphicon-credit-card active");
+        btnBoleto.setAttribute("class", "btn btn-default btn-lg glyphicon glyphicon-barcode");
     });
     
-    btnBoleto.addEventListener("click", function(e){
+    btnBoleto.addEventListener("click",  function(e){
         divCartao.style.display = "none"; 
         divBoleto.style.display = "block";
+        btnBoleto.setAttribute("class", "btn btn-default btn-lg glyphicon glyphicon-barcode active");
+        btnCartao.setAttribute("class", "btn btn-info btn-lg glyphicon glyphicon-credit-card");
     });
     
+        
     
     // FORMAS DE PAGAMENTO
     
