@@ -137,35 +137,74 @@ function main(){
     divTable.appendChild(table)
     table.appendChild(thead);
     table.appendChild(tbody);
+    var tela = document.createElement("p");
+    tela.innerHTML = "TELA";
     document.getElementById("tabelaLugares").appendChild(divTable);
+    document.getElementById("tabelaLugares").appendChild(tela);
     
     // CLICK DOS LUGARES
     
+    var contLugares = 0;
     var lugares = document.querySelectorAll("#tabelaLugares table tr td");
     var lugaresArr = Array.prototype.slice.call(lugares);
     lugaresArr.forEach(function(x){
         x.addEventListener("click", function(e){
             var ul = document.getElementById("lugaresEscolhidos");
             if(x.title === "escolhido"){
-                x.style.backgroundColor = "black";
-                x.style.color = "white";
+                x.style.backgroundColor = "#111";
+                x.style.color = "#111";
                 x.removeAttribute("title");
                 var li = document.getElementById("l"+x.id);
                 ul.removeChild(li);
+                contLugares--;
             }
             else{
                 var li = document.createElement("li");
                 li.setAttribute("id", "l"+x.id);
                 li.innerHTML = x.id;
                 ul.appendChild(li);
-                x.style.backgroundColor = "red";
+                x.style.backgroundColor = "black";
+                x.style.color = "white";
                 x.setAttribute("title", "escolhido");
+                contLugares++;
             }
         });
     });
     
     
+    /**************** DIV INGRESSOS ****************/
     
+    document.getElementById("goIngressos").addEventListener("click", function(e){
+        var tbody = document.getElementById("qtdIngressos");
+        tbody.innerHTML = "";
+        for(var i = 1; i <= contLugares; i++){
+            var tr = document.createElement("tr");
+            var tdTipo = document.createElement("td");
+            var tdRa = document.createElement("td");
+            var tdValor = document.createElement("td");
+            var select = document.createElement("select");
+            var inteira = document.createElement("option");
+            var meia = document.createElement("option");
+            var trocar = document.createElement("span");
+            
+            select.setAttribute("class", "form-control");
+            inteira.setAttribute("value", "inteira");
+            meia.setAttribute("value", "meia");
+            
+            inteira.innerHTML = "Inteira";
+            meia.innerHTML = "Meia";
+            tdValor.innerHTML = "R$ 23,00";
+            
+            select.appendChild(inteira);
+            select.appendChild(meia);
+            tdTipo.appendChild(select);
+            tdRa.appendChild(trocar);
+            tr.appendChild(tdTipo);
+            tr.appendChild(tdRa);
+            tr.appendChild(tdValor);
+            tbody.appendChild(tr);
+        }
+    });
     
     /**************** DIV FINALIZAR ****************/
     

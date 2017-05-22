@@ -138,6 +138,7 @@
 }
 
 /* lugares */
+
 .table{
     overflow: hidden;
 }
@@ -149,22 +150,26 @@
 
 #lugares .table tr td{
     font-family: 'Montserrat', sans-serif;
-    background-color: black;
-    padding: 15px;
-    color: #000;
-    border:5px solid #222;
+    background-color: #111;
+    padding: 5px;
+    color: #111;
+    border: 5px solid #222;
     text-align: center;
-    background: radial-gradient(circle closest-side,#000 0%,#000 98%,rgba(0,0,0,0) 100%);
     font-weight: bold;
 }
+
 #lugares .table tr td:hover{
     cursor: pointer;
     color: #fff !important;
-    background: radial-gradient(circle closest-side,#8B0000 0%,#8B0000 98%,rgba(0,0,0,0) 100%) !important;
+}
+
+#lugaresEscolhidos li{
+    list-style: none;
 }
 
 
 /* INFO/SINOPSE */
+
 .logo-background{
     margin-top:20px;
     width: 340px;
