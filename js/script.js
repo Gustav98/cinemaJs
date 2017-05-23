@@ -28,7 +28,7 @@ function main(){
         col.addEventListener("click", function(e){
             sessao(this.id);
         });
-        infoFilme.setAttribute("class", "info-filme");
+        infoFilme.setAttribute("class", "info-filme","a","#sessao");
         classif.setAttribute("class", "classification-"+x.classificacao);
         imgFilme.setAttribute("src", "img/"+x.cartaz);
         imgFilme.setAttribute("class", "img-responsive poster");
@@ -151,7 +151,7 @@ function main(){
         x.addEventListener("click", function(e){
             var ul = document.getElementById("lugaresEscolhidos");
             if(x.title === "escolhido"){
-                x.style.backgroundColor = "#111";
+                x.style.backgroundColor = "#8B0000";
                 x.style.color = "#111";
                 x.removeAttribute("title");
                 var li = document.getElementById("l"+x.id);
@@ -311,3 +311,12 @@ function fbLogout() {
         document.getElementById('foto').innerHTML = '';
     });
 }
+
+/********** SCROLL **********/
+$(".intro-btn a, #filmes .info-filme a, #lugares a, #ingresso a").click(function(){
+        var scrollLink = $($(this).attr("href")).offset().top;
+        $('body').animate({
+            scrollTop: scrollLink,
+        });
+    });
+    

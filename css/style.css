@@ -161,6 +161,7 @@
 #lugares .table tr td:hover{
     cursor: pointer;
     color: #fff !important;
+    background-color: #8B0000 !important;
 }
 
 #lugaresEscolhidos li{
