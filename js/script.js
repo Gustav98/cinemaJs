@@ -12,6 +12,7 @@ function main(){
                  {"codigo":"7","nome":"Mulher Maravilha","cartaz":"cartaz/wonderwoman-cartaz.jpg","classificacao":"14","genero":"Acao/Aventura/Fantasia","duracao":"?","diretor":"Patty Jenkins","elenco":"Gal Gadot, Robin Wright, Chris Pine, David Thewlis, Elena Anaya, Danny Huston, Lucy Davis, Ewen Bremner, Saïd Taghmaoui.","sinopse":"Antes de ser Mulher-Maravilha, ela era Diana, princesa das Amazonas, treinada para ser uma guerreira imbatível. Criada numa ilha paraíso protegida e escondida, tudo muda quando um piloto americano chega em seu território e avisa sobre um grande conflito tomando forma no mundo. Diana deixa seu lar convencida de que pode impedir a ameaça crescente. Lutando ao lado dos homens em uma guerra para dar fim a todas as outras, Diana descobre seus poderes… e seu destino."},
                  {"codigo":"8","nome":"Rei Arthur: A Lenda da Espada","cartaz":"cartaz/reiarthur-cartaz.jpg","classificacao":"14","genero":"Acao/Aventura/Drama","duracao":"130","diretor":"Guy Ritchie","elenco":"Charlie Hunnam, Jude Law, Eric Bana, Annabelle Wallis, Djimon Hounsou, Eline Powell, David Beckham","sinopse":"Arthur é um jovem das ruas que controla os becos de Londonium e desconhece sua predestinação até o momento em que entra em contato pela primeira vez com a Excalibur. Desafiado pela espada, ele precisa tomar difíceis decisões, enfrentar seus demônios e aprender a dominar o poder que possui para conseguir, enfim, unir seu povo e partir para a luta contra o tirano Vortigern, que destruiu sua família."},];
     
+    var sessoes = [{"manha":"10:30","tarde":"16:15","noite":"20:45"}];
     
     /**************** DIV FILMES ****************/
     
@@ -137,10 +138,7 @@ function main(){
     divTable.appendChild(table)
     table.appendChild(thead);
     table.appendChild(tbody);
-    var tela = document.createElement("p");
-    tela.innerHTML = "TELA";
     document.getElementById("tabelaLugares").appendChild(divTable);
-    document.getElementById("tabelaLugares").appendChild(tela);
     
     // CLICK DOS LUGARES
     
@@ -151,7 +149,7 @@ function main(){
         x.addEventListener("click", function(e){
             var ul = document.getElementById("lugaresEscolhidos");
             if(x.title === "escolhido"){
-                x.style.backgroundColor = "#8B0000";
+                x.style.backgroundColor = "#111";
                 x.style.color = "#111";
                 x.removeAttribute("title");
                 var li = document.getElementById("l"+x.id);
@@ -185,26 +183,47 @@ function main(){
             var select = document.createElement("select");
             var inteira = document.createElement("option");
             var meia = document.createElement("option");
-            var trocar = document.createElement("span");
             
             select.setAttribute("class", "form-control");
+            //select.setAttribute("id", "input"+i);
             inteira.setAttribute("value", "inteira");
             meia.setAttribute("value", "meia");
             
             inteira.innerHTML = "Inteira";
             meia.innerHTML = "Meia";
+            tdRa.innerHTML = "<span class='invi'>ahusasuhhasuasuhsahusausauhsah</span>";
             tdValor.innerHTML = "R$ 23,00";
             
             select.appendChild(inteira);
             select.appendChild(meia);
             tdTipo.appendChild(select);
-            tdRa.appendChild(trocar);
             tr.appendChild(tdTipo);
             tr.appendChild(tdRa);
             tr.appendChild(tdValor);
             tbody.appendChild(tr);
         }
+        ingressos();
     });
+    
+    // INPUT RA
+    
+    function ingressos(){
+        var input = document.querySelectorAll("#ingresso select");
+        var inputArr = Array.prototype.slice.call(input);
+        inputArr.forEach(function(x){
+            x.addEventListener("change", function(){
+                var getTr = x.parentNode.parentNode;
+                var getSpan = getTr.querySelector("span");
+                var inputRa = document.createElement("input");
+                
+                inputRa.setAttribute("class", "form-control");
+                inputRa.setAttribute("placeholder", "Insira seu R.A");
+                
+                getSpan.parentNode.replaceChild(inputRa, getSpan);
+            });
+        });
+    }
+    
     
     /**************** DIV FINALIZAR ****************/
     
@@ -314,9 +333,21 @@ function fbLogout() {
 
 /********** SCROLL **********/
 $(".intro-btn a, #filmes .info-filme a, #lugares a, #ingresso a").click(function(){
-        var scrollLink = $($(this).attr("href")).offset().top;
-        $('body').animate({
-            scrollTop: scrollLink,
-        });
-    });
+
+    document.getElementById("filmes").style.display = "block";
     
+    var scrollLink = $($(this).attr("href")).offset().top;
+    $('body').animate({
+        scrollTop: scrollLink,
+    });
+});
+    
+
+/********** GO PAGINAS **********/
+
+/*document.getElementById("goFilmes").addEventListener("click", function(e){
+   var divFilmes = document.getElementById("filmes");
+   divFilmes.style.display = "block";
+   setTimeout(function(){ window.location = "index.html#filmes"; }, 3000);
+});
+*/
