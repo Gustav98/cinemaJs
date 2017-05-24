@@ -9,6 +9,12 @@ h1, h2{font-family: 'Bitter', serif;}
     padding: 20px; 
 }
 
+#finalizar{
+    width: 100%;
+    height: 100vh;
+    padding: 20px; 
+}
+
 #filmes{
     display: none;
 }

@@ -185,14 +185,14 @@ function main(){
             var meia = document.createElement("option");
             
             select.setAttribute("class", "form-control");
-            //select.setAttribute("id", "input"+i);
             inteira.setAttribute("value", "inteira");
             meia.setAttribute("value", "meia");
             
             inteira.innerHTML = "Inteira";
             meia.innerHTML = "Meia";
-            tdRa.innerHTML = "<span class='invi'>ahusasuhhasuasuhsahusausauhsah</span>";
-            tdValor.innerHTML = "R$ 23,00";
+
+            tdRa.innerHTML = "<span class='invi'>ahusasuhhasuasuhsahusausah</span>";
+            tdValor.innerHTML = "R$ <span class='vl'>23,00</span>";
             
             select.appendChild(inteira);
             select.appendChild(meia);
@@ -205,27 +205,52 @@ function main(){
         ingressos();
     });
     
-    // INPUT RA
+    // onChange R.A
     
     function ingressos(){
-        var input = document.querySelectorAll("#ingresso select");
-        var inputArr = Array.prototype.slice.call(input);
-        inputArr.forEach(function(x){
+        var select = document.querySelectorAll("#ingresso select");
+        var selectArr = Array.prototype.slice.call(select);
+        selectArr.forEach(function(x){
             x.addEventListener("change", function(){
-                var getTr = x.parentNode.parentNode;
-                var getSpan = getTr.querySelector("span");
-                var inputRa = document.createElement("input");
-                
-                inputRa.setAttribute("class", "form-control");
-                inputRa.setAttribute("placeholder", "Insira seu R.A");
-                
-                getSpan.parentNode.replaceChild(inputRa, getSpan);
+                if(x.value === "meia"){
+                    var getTr = x.parentNode.parentNode;
+                    var getSpan = getTr.querySelector("span");
+                    var getVl = getTr.querySelector("span.vl"); 
+                    var inputRa = document.createElement("input");
+                    
+                    inputRa.setAttribute("class", "form-control");
+                    inputRa.setAttribute("placeholder", "Insira o R.A");
+                    getSpan.parentNode.replaceChild(inputRa, getSpan);  
+                    getVl.innerHTML = "11,50";
+                }
+                else{
+                    var getTr = x.parentNode.parentNode;
+                    var getInput = getTr.querySelector("input");
+                    var span = document.createElement("span");
+                    
+                    span.setAttribute("class", "invi");
+                    span.innerHTML = "ahusasuhhasuasuhsahusausah";
+                    getInput.parentNode.replaceChild(span, getInput);
+                }
             });
         });
     }
     
     
     /**************** DIV FINALIZAR ****************/
+    
+    document.getElementById("goFinalizar").addEventListener("click", function(){
+        var vlTotal = 0;
+        var tbody = document.getElementById("qtdIngressos");
+        var trs = tbody.querySelectorAll("tr");
+        var trsArr = Array.prototype.slice.call(trs);
+        trsArr.forEach(function(x){
+          var td = x.childNodes;
+          var vl = parseFloat(td[2].querySelector("span.vl").innerHTML);
+          vlTotal = vlTotal + vl;
+        });
+        document.getElementById("finalizarTotal").innerHTML = "R$ "+vlTotal.toFixed(2);
+    });
     
     var btnCartao = document.getElementById("btnCartao");
     var btnBoleto = document.getElementById("btnBoleto");
