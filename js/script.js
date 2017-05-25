@@ -256,7 +256,7 @@ function main(){
     var btnBoleto = document.getElementById("btnBoleto");
     var divCartao = document.getElementById("cartao");
     var divBoleto = document.getElementById("boleto");
-    
+    var toSpan = divBoleto.querySelector("span");
     
     btnCartao.addEventListener("click", function(e){
         divBoleto.style.display = "none"; 
@@ -272,6 +272,15 @@ function main(){
         btnCartao.setAttribute("class", "btn btn-info btn-lg glyphicon glyphicon-credit-card");
     });
     
+    btnImprimir.addEventListener("click",  function(e){
+        divCartao.style.display = "none"; 
+        divBoleto.style.display = "block";
+        btnBoleto.setAttribute("class", "btn btn-default btn-lg glyphicon glyphicon-barcode active");
+        btnCartao.setAttribute("class", "btn btn-info btn-lg glyphicon glyphicon-credit-card");
+        btnImprimir.setAttribute("class", "btn btn-info btn-lg glyphicon glyphicon-print active");
+        toSpan.innerHTML = "<hr> <a href='img/boletoembranco.jpg' target='_blank'><img src='img/boletoembranco.jpg' width= '100%' height='auto' alt='Boleto' target='_blank'></a>";
+        
+    });
         
     
     // FORMAS DE PAGAMENTO
