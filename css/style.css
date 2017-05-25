@@ -11,7 +11,7 @@ h1, h2{font-family: 'Bitter', serif;}
 
 #finalizar{
     width: 100%;
-    height: 100vh;
+    height: 90vh;
     padding: 20px; 
 }
 
@@ -102,13 +102,6 @@ h1, h2{font-family: 'Bitter', serif;}
     );
 }
 
-/*.filme .info-filme img.classif{
-    float: right;
-    right: 0;
-    width: 30px;
-    height: 30px;
-}
-*/
 
 .classification-12{
     position: absolute;
@@ -322,3 +315,6 @@ h1, h2{font-family: 'Bitter', serif;}
     text-align: center;
     color:#DCDCDC;
 }
+
+/* nav */
+

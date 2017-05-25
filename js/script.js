@@ -13,6 +13,7 @@ function main(){
                  {"codigo":"8","nome":"Rei Arthur: A Lenda da Espada","cartaz":"cartaz/reiarthur-cartaz.jpg","classificacao":"14","genero":"Acao/Aventura/Drama","duracao":"130","diretor":"Guy Ritchie","elenco":"Charlie Hunnam, Jude Law, Eric Bana, Annabelle Wallis, Djimon Hounsou, Eline Powell, David Beckham","sinopse":"Arthur é um jovem das ruas que controla os becos de Londonium e desconhece sua predestinação até o momento em que entra em contato pela primeira vez com a Excalibur. Desafiado pela espada, ele precisa tomar difíceis decisões, enfrentar seus demônios e aprender a dominar o poder que possui para conseguir, enfim, unir seu povo e partir para a luta contra o tirano Vortigern, que destruiu sua família."},];
     
     var sessoes = [{"manha":"10:30","tarde":"16:15","noite":"20:45"}];
+    var resultado = [{"filme":"","img":"","sessao":"","assentos":[],"total":""}];
     
     /**************** DIV FILMES ****************/
     
@@ -28,6 +29,9 @@ function main(){
         col.setAttribute("id", x.codigo);
         col.addEventListener("click", function(e){
             sessao(this.id);
+            var img = this.querySelector("img");
+            resultado[0].filme = img.alt; // resultado -> filme
+            resultado[0].img = img.src; // resultado -> img
         });
         infoFilme.setAttribute("class", "info-filme","a","#sessao");
         classif.setAttribute("class", "classification-"+x.classificacao);
@@ -61,6 +65,7 @@ function main(){
                 var sinopse = document.createElement("p");
                 var diretor = document.createElement("p");
                 var elenco = document.createElement("p");
+                var horario = document.createElement("div");
                 
                 img.setAttribute("src", "img/"+x.cartaz);
                 img.setAttribute("alt", x.nome);
@@ -78,6 +83,7 @@ function main(){
                 sinopse.innerHTML = x.sinopse;
                 diretor.innerHTML = "<strong class='d-block'>Diretor </strong>"+x.diretor;
                 elenco.innerHTML = "<strong class='d-block'>Elenco </strong>"+x.elenco;
+                horario.innerHTML = "<strong>Sessões: </strong><a href='#lugares' id='hr1'>10:30</a> <a href='#lugares' id='hr2'>16:15</a> <a href='#lugares' id='hr3'>21:15</a> ";
                 
                 document.getElementById("sessaoImg").innerHTML = "";
                 document.getElementById("sessaoInfo").innerHTML = "";
@@ -88,12 +94,20 @@ function main(){
                 document.getElementById("sessaoInfo").appendChild(classif);
                 document.getElementById("sessaoInfo").appendChild(duracao);
                 document.getElementById("sessaoInfo").appendChild(description);
+                document.getElementById("sessaoInfo").appendChild(horario);
                 description.appendChild(sinopse);
                 description.appendChild(diretor);
                 description.appendChild(elenco);
             }
         });
+        
+        // resultado -> sessao
+        document.getElementById("hr1").addEventListener("click",function(e){resultado[0].sessao = '10:30';});
+        document.getElementById("hr2").addEventListener("click",function(e){resultado[0].sessao = '16:15';});
+        document.getElementById("hr3").addEventListener("click",function(e){resultado[0].sessao = '21:45';});
     }
+    
+    
     
     /**************** DIV LUGARES ****************/
     
@@ -155,6 +169,12 @@ function main(){
                 var li = document.getElementById("l"+x.id);
                 ul.removeChild(li);
                 contLugares--;
+                resultado[0].assentos.splice(contLugares, 1); // resultado -> assentos
+                /*for(var i = 0; i <= resultado[0].assentos; i++){
+                    if(i === x.id){
+                        resultado[0].assentos.splice(i, 1); // resultado -> assentos
+                    }
+                }*/
             }
             else{
                 var li = document.createElement("li");
@@ -164,6 +184,7 @@ function main(){
                 x.style.backgroundColor = "black";
                 x.style.color = "white";
                 x.setAttribute("title", "escolhido");
+                resultado[0].assentos[contLugares] = x.id; // resultado -> assentos
                 contLugares++;
             }
         });
@@ -203,6 +224,7 @@ function main(){
             tbody.appendChild(tr);
         }
         ingressos();
+        alert(resultado[0].assentos);
     });
     
     // onChange R.A
@@ -249,7 +271,13 @@ function main(){
           var vl = parseFloat(td[2].querySelector("span.vl").innerHTML);
           vlTotal = vlTotal + vl;
         });
+        document.getElementById("finalizarImg").innerHTML = "<img src='"+resultado[0].img+"' alt='"+resultado[0].filme+"' class='img-responsive'>";
+        document.getElementById("finalizarFilme").innerHTML = resultado[0].filme;
+        document.getElementById("finalizarSessao").innerHTML = resultado[0].sessao;
         document.getElementById("finalizarTotal").innerHTML = "R$ "+vlTotal.toFixed(2);
+        document.getElementById("finalizarAssentos").innerHTML = resultado[0].assentos;
+        
+        
     });
     
     var btnCartao = document.getElementById("btnCartao");
@@ -301,6 +329,14 @@ function main(){
         }); 
     }
 }
+
+
+
+
+
+/********** API DO FACEBOOK ************/
+
+
 
 
 // API DO FACEBOOK
@@ -366,7 +402,7 @@ function fbLogout() {
 }
 
 /********** SCROLL **********/
-$(".intro-btn a, #filmes .info-filme a, #lugares a, #ingresso a").click(function(){
+$(".intro-btn a, #filmes .info-filme a, #lugares a, #ingresso a, #sessao a").click(function(){
 
     document.getElementById("filmes").style.display = "block";
     
