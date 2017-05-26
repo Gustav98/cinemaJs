@@ -4,15 +4,15 @@ function main(){
     
     // variavel dos filmes
     var filmes = [{"codigo":"1","nome":"Guardiões da Galaxia vol.2","cartaz":"cartaz/gotg-cartaz.jpg","classificacao":"12","genero":"Aventura","duracao":"137","diretor":"James Gunn","elenco":"Chris Pratt, Vin Diesel, Zoe Saldana, Dave Batista, Bradley Cooper, Karen Gillan, Pom Klementieff, Michael Rooker","sinopse":"Os Guardiões precisam lutar para manter sua recém descoberta família unida, enquanto descobrem os mistérios sobre o verdadeiro pai de Peter Quill. Antigos inimigos se tornam aliados e personagens conhecidos e amados dos quadrinhos virão ao auxílio dos nossos heróis, enquanto o Universo Cinematográfico da Marvel continua se expandindo."},
-                 {"codigo":"2","nome":"Kingsman - O circulo dourado","cartaz":"cartaz/kingsman-cartaz.jpg","classificacao":"16","genero":"Acao","duracao":"?","diretor":"Matthew Vaughn","elenco":"Taron Egerton, Colin Firth, Julianne Moore","sinopse":"Quando o quartel general Kingsman é destruído, uma jornada os leva à descoberta de uma organização de espionagem nos EUA. Essas duas corporações secretas de elite devem se unir para derrotar um inimigo comum."},
-                 {"codigo":"3","nome":"Alien Covenant","cartaz":"cartaz/alien-cartaz.jpg","classificacao":"16","genero":"Ficcao/Suspense/Terror","duracao":"122","diretor":"Ridley Scott","elenco":"Michael Fassbender, James Franco, Katherine Waterston, Noomi Rapace, Guy Pearce","sinopse":"2104. Viajando pela galáxia, os tripulantes da nave colonizadora Covenant encontram um planeta remoto com ares de paraíso inexplorado. Encantados, eles acreditam na sorte e ignoram a realidade do local: uma terra sombria que guarda terríveis segredos e tem o sobrevivente David como habitante solitário."},
-                 {"codigo":"4","nome":"Star Wars - Os Ultimos Jedi","cartaz":"cartaz/poster-swviii.jpg","classificacao":"12","genero":"Acao/Aventura/Ficcao","duracao":"?","diretor":" Rian Johnson","elenco":"Daisy Ridley , Adam Driver , Oscar Isaac , Domhnall Gleeson , Mark Hamill , Lupita Nyong'o","sinopse":"Após encontrar o mítico e recluso Luke Skywalker (Mark Hammil) em uma ilha isolada, a jovem Rey (Daisy Ridley) busca entender o balanço da Força a partir dos ensinamentos do mestre jedi. Paralelamente, o Primeiro Império de Kylo Ren (Adam Driver) se reorganiza para enfrentar a Aliança Rebelde."},
+                 {"codigo":"2","nome":"Kingsman - O circulo dourado","cartaz":"cartaz/kingsman-cartaz.jpg","classificacao":"16","genero":"Ação","duracao":"?","diretor":"Matthew Vaughn","elenco":"Taron Egerton, Colin Firth, Julianne Moore","sinopse":"Quando o quartel general Kingsman é destruído, uma jornada os leva à descoberta de uma organização de espionagem nos EUA. Essas duas corporações secretas de elite devem se unir para derrotar um inimigo comum."},
+                 {"codigo":"3","nome":"Alien Covenant","cartaz":"cartaz/alien-cartaz.jpg","classificacao":"16","genero":"Ficção/Suspense/Terror","duracao":"122","diretor":"Ridley Scott","elenco":"Michael Fassbender, James Franco, Katherine Waterston, Noomi Rapace, Guy Pearce","sinopse":"2104. Viajando pela galáxia, os tripulantes da nave colonizadora Covenant encontram um planeta remoto com ares de paraíso inexplorado. Encantados, eles acreditam na sorte e ignoram a realidade do local: uma terra sombria que guarda terríveis segredos e tem o sobrevivente David como habitante solitário."},
+                 {"codigo":"4","nome":"Star Wars - Os Ultimos Jedi","cartaz":"cartaz/poster-swviii.jpg","classificacao":"12","genero":"Ação/Aventura/Ficção","duracao":"?","diretor":" Rian Johnson","elenco":"Daisy Ridley , Adam Driver , Oscar Isaac , Domhnall Gleeson , Mark Hamill , Lupita Nyong'o","sinopse":"Após encontrar o mítico e recluso Luke Skywalker (Mark Hammil) em uma ilha isolada, a jovem Rey (Daisy Ridley) busca entender o balanço da Força a partir dos ensinamentos do mestre jedi. Paralelamente, o Primeiro Império de Kylo Ren (Adam Driver) se reorganiza para enfrentar a Aliança Rebelde."},
                  {"codigo":"5","nome":"Velozes e Furiosos 8","cartaz":"cartaz/vf8-cartaz.jpg","classificacao":"14","genero":"Acao","duracao":"136","diretor":"F. Gary Gray","elenco":"Vin Diesel, Jason Statham, Jordana Brewster, Charlize Theron, Dwayne Johnson, Scott Eastwood, Kurt Russell, Helen Mirren","sinopse":"Depois que Brian e Mia se aposentaram, e o resto da equipe foi exonerado, Dom e Letty estão em lua de mel e levam uma vida pacata e completamente normal. Mas a adrenalina do passado acaba voltando com tudo quando uma mulher misteriosa faz com que Dom retorne ao mundo do crime e da velocidade."},
-                 {"codigo":"6","nome":"Logan Noir","cartaz":"cartaz/loganbw-cartaz.jpg","classificacao":"16","genero":"Acao","duracao":"137","diretor":"James Mangold","elenco":" Boyd Holbrook , Hugh Jackman , Patrick Stewart , Elizabeth Rodriguez","sinopse":"Única exibição no Brasil da versão em preto e branco feita para um dos maiores filmes de super herói de todos os tempos!"},
-                 {"codigo":"7","nome":"Mulher Maravilha","cartaz":"cartaz/wonderwoman-cartaz.jpg","classificacao":"14","genero":"Acao/Aventura/Fantasia","duracao":"?","diretor":"Patty Jenkins","elenco":"Gal Gadot, Robin Wright, Chris Pine, David Thewlis, Elena Anaya, Danny Huston, Lucy Davis, Ewen Bremner, Saïd Taghmaoui.","sinopse":"Antes de ser Mulher-Maravilha, ela era Diana, princesa das Amazonas, treinada para ser uma guerreira imbatível. Criada numa ilha paraíso protegida e escondida, tudo muda quando um piloto americano chega em seu território e avisa sobre um grande conflito tomando forma no mundo. Diana deixa seu lar convencida de que pode impedir a ameaça crescente. Lutando ao lado dos homens em uma guerra para dar fim a todas as outras, Diana descobre seus poderes… e seu destino."},
-                 {"codigo":"8","nome":"Rei Arthur: A Lenda da Espada","cartaz":"cartaz/reiarthur-cartaz.jpg","classificacao":"14","genero":"Acao/Aventura/Drama","duracao":"130","diretor":"Guy Ritchie","elenco":"Charlie Hunnam, Jude Law, Eric Bana, Annabelle Wallis, Djimon Hounsou, Eline Powell, David Beckham","sinopse":"Arthur é um jovem das ruas que controla os becos de Londonium e desconhece sua predestinação até o momento em que entra em contato pela primeira vez com a Excalibur. Desafiado pela espada, ele precisa tomar difíceis decisões, enfrentar seus demônios e aprender a dominar o poder que possui para conseguir, enfim, unir seu povo e partir para a luta contra o tirano Vortigern, que destruiu sua família."},];
+                 {"codigo":"6","nome":"Logan Noir","cartaz":"cartaz/loganbw-cartaz.jpg","classificacao":"16","genero":"Ação","duracao":"137","diretor":"James Mangold","elenco":" Boyd Holbrook , Hugh Jackman , Patrick Stewart , Elizabeth Rodriguez","sinopse":"Única exibição no Brasil da versão em preto e branco feita para um dos maiores filmes de super herói de todos os tempos!"},
+                 {"codigo":"7","nome":"Mulher Maravilha","cartaz":"cartaz/wonderwoman-cartaz.jpg","classificacao":"14","genero":"Ação/Aventura/Fantasia","duracao":"?","diretor":"Patty Jenkins","elenco":"Gal Gadot, Robin Wright, Chris Pine, David Thewlis, Elena Anaya, Danny Huston, Lucy Davis, Ewen Bremner, Saïd Taghmaoui.","sinopse":"Antes de ser Mulher-Maravilha, ela era Diana, princesa das Amazonas, treinada para ser uma guerreira imbatível. Criada numa ilha paraíso protegida e escondida, tudo muda quando um piloto americano chega em seu território e avisa sobre um grande conflito tomando forma no mundo. Diana deixa seu lar convencida de que pode impedir a ameaça crescente. Lutando ao lado dos homens em uma guerra para dar fim a todas as outras, Diana descobre seus poderes… e seu destino."},
+                 {"codigo":"8","nome":"Rei Arthur: A Lenda da Espada","cartaz":"cartaz/reiarthur-cartaz.jpg","classificacao":"14","genero":"Ação/Aventura/Drama","duracao":"130","diretor":"Guy Ritchie","elenco":"Charlie Hunnam, Jude Law, Eric Bana, Annabelle Wallis, Djimon Hounsou, Eline Powell, David Beckham","sinopse":"Arthur é um jovem das ruas que controla os becos de Londonium e desconhece sua predestinação até o momento em que entra em contato pela primeira vez com a Excalibur. Desafiado pela espada, ele precisa tomar difíceis decisões, enfrentar seus demônios e aprender a dominar o poder que possui para conseguir, enfim, unir seu povo e partir para a luta contra o tirano Vortigern, que destruiu sua família."},];
     
-    var sessoes = [{"manha":"10:30","tarde":"16:15","noite":"20:45"}];
+   
     var resultado = [{"filme":"","img":"","sessao":"","assentos":[],"total":""}];
     
     /**************** DIV FILMES ****************/
@@ -79,11 +79,12 @@ function main(){
                 tituloFilme.innerHTML = x.nome;
                 genero.innerHTML = x.genero;
                 classif.innerHTML = x.classificacao;
+                classif.style.color = "#fff"
                 duracao.innerHTML = x.duracao+" min.";
                 sinopse.innerHTML = x.sinopse;
                 diretor.innerHTML = "<strong class='d-block'>Diretor </strong>"+x.diretor;
                 elenco.innerHTML = "<strong class='d-block'>Elenco </strong>"+x.elenco;
-                horario.innerHTML = "<strong>Sessões: </strong><a href='#lugares' id='hr1'>10:30</a> <a href='#lugares' id='hr2'>16:15</a> <a href='#lugares' id='hr3'>21:15</a> ";
+                horario.innerHTML = "<strong>Sessões: </strong><a href='#lugares' id='hr1' class='hvr-bounce-to-right'>10:30</a> <a href='#lugares' id='hr2' class='hvr-bounce-to-right'>16:15</a> <a href='#lugares' id='hr3' class='hvr-bounce-to-right'>21:15</a> ";
                 
                 document.getElementById("sessaoImg").innerHTML = "";
                 document.getElementById("sessaoInfo").innerHTML = "";
@@ -224,7 +225,7 @@ function main(){
             tbody.appendChild(tr);
         }
         ingressos();
-        alert(resultado[0].assentos);
+        //alert(resultado[0].assentos);
     });
     
     // onChange R.A
@@ -289,7 +290,7 @@ function main(){
     btnCartao.addEventListener("click", function(e){
         divBoleto.style.display = "none"; 
         divCartao.style.display = "block";
-        btnCartao.setAttribute("class", "btn btn-info btn-lg glyphicon glyphicon-credit-card active");
+        btnCartao.setAttribute("class", "btn btn-default btn-lg glyphicon glyphicon-credit-card active");
         btnBoleto.setAttribute("class", "btn btn-default btn-lg glyphicon glyphicon-barcode");
     });
     
@@ -297,15 +298,15 @@ function main(){
         divCartao.style.display = "none"; 
         divBoleto.style.display = "block";
         btnBoleto.setAttribute("class", "btn btn-default btn-lg glyphicon glyphicon-barcode active");
-        btnCartao.setAttribute("class", "btn btn-info btn-lg glyphicon glyphicon-credit-card");
+        btnCartao.setAttribute("class", "btn btn-default btn-lg glyphicon glyphicon-credit-card");
     });
     
     btnImprimir.addEventListener("click",  function(e){
         divCartao.style.display = "none"; 
         divBoleto.style.display = "block";
         btnBoleto.setAttribute("class", "btn btn-default btn-lg glyphicon glyphicon-barcode active");
-        btnCartao.setAttribute("class", "btn btn-info btn-lg glyphicon glyphicon-credit-card");
-        btnImprimir.setAttribute("class", "btn btn-info btn-lg glyphicon glyphicon-print active");
+        btnCartao.setAttribute("class", "btn btn-default btn-lg glyphicon glyphicon-credit-card");
+        btnImprimir.setAttribute("class", "btn btn-default btn-lg glyphicon glyphicon-print active");
         toSpan.innerHTML = "<hr> <a href='img/boletoembranco.jpg' target='_blank'><img src='img/boletoembranco.jpg' width= '100%' height='auto' alt='Boleto' target='_blank'></a>";
         
     });
