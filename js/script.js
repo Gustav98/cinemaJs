@@ -19,12 +19,14 @@ function main(){
     
     var rowFilmes = document.getElementById("rowFilmes");
     filmes.forEach(function(x){
+        var a = document.createElement("a");
         var col = document.createElement("div");
         var infoFilme = document.createElement("div");
         var classif = document.createElement("span");
         var nomeFilme = document.createElement("p");
         var imgFilme = document.createElement("img");
         
+        a.setAttribute("href", "#sessao");
         col.setAttribute("class", "col-lg-3 col-sm-4 col-xs-6 filme");
         col.setAttribute("id", x.codigo);
         col.addEventListener("click", function(e){
@@ -46,7 +48,9 @@ function main(){
         infoFilme.appendChild(nomeFilme);
         col.appendChild(infoFilme);
         col.appendChild(imgFilme);
-        rowFilmes.appendChild(col);
+        a.appendChild(col);
+        rowFilmes.appendChild(a);
+        scroll();
     });
     
     
@@ -106,6 +110,8 @@ function main(){
         document.getElementById("hr1").addEventListener("click",function(e){resultado[0].sessao = '10:30';});
         document.getElementById("hr2").addEventListener("click",function(e){resultado[0].sessao = '16:15';});
         document.getElementById("hr3").addEventListener("click",function(e){resultado[0].sessao = '21:45';});
+    
+        scroll();
     }
     
     
@@ -214,7 +220,7 @@ function main(){
             meia.innerHTML = "Meia";
 
             tdRa.innerHTML = "<span class='invi'>ahusasuhhasuasuhsahusausah</span>";
-            tdValor.innerHTML = "R$ <span class='vl'>23,00</span>";
+            tdValor.innerHTML = "R$ <span class='vl'>20,00</span>";
             
             select.appendChild(inteira);
             select.appendChild(meia);
@@ -244,12 +250,14 @@ function main(){
                     inputRa.setAttribute("class", "form-control");
                     inputRa.setAttribute("placeholder", "Insira o R.A");
                     getSpan.parentNode.replaceChild(inputRa, getSpan);  
-                    getVl.innerHTML = "11,50";
+                    getVl.innerHTML = "10,00";
                 }
                 else{
                     var getTr = x.parentNode.parentNode;
                     var getInput = getTr.querySelector("input");
+                    var getVl = getTr.querySelector("span.vl");
                     var span = document.createElement("span");
+                    getVl.innerHTML = "20,00";
                     
                     span.setAttribute("class", "invi");
                     span.innerHTML = "ahusasuhhasuasuhsahusausah";
@@ -389,6 +397,9 @@ function getFbUserData(){
         document.getElementById('fbLink').innerHTML = 'Sair do Facebook';
         document.getElementById('status').innerHTML = 'Bem-vindo, ' + response.first_name + '!';
         document.getElementById('foto').innerHTML = '<img src="'+response.picture.data.url+'" class="img-responsive thumbnail"/>';
+        document.getElementById("btncomecar").innerHTML = "<a class='btn btn-lg' id='goFilmes' href='#filmes' alt='botão iniciar'>Clique aqui para começar</a>";
+        document.getElementById("facalogin").innerHTML = 'Os melhores lançamentos de filmes';
+        scroll();
     });
 }
 
@@ -399,19 +410,25 @@ function fbLogout() {
         document.getElementById('fbLink').innerHTML = '<img src="img/loginfb.png"/>';
         document.getElementById('status').innerHTML = '';
         document.getElementById('foto').innerHTML = '';
+        document.getElementById("btncomecar").innerHTML = '';
+        document.getElementById("facalogin").innerHTML = 'Faça Login para começar';
+        window.location = "index.html";
     });
 }
 
 /********** SCROLL **********/
-$(".intro-btn a, #filmes .info-filme a, #lugares a, #ingresso a, #sessao a").click(function(){
+function scroll(){
+    $(".intro-btn a, #filmes #rowFilmes a, #lugares a, #ingresso a, #sessao a").click(function(){
 
-    document.getElementById("filmes").style.display = "block";
-    
-    var scrollLink = $($(this).attr("href")).offset().top;
-    $('body').animate({
-        scrollTop: scrollLink,
-    });
-});
+        document.getElementById("filmes").style.display = "block";
+        
+        var scrollLink = $($(this).attr("href")).offset().top;
+        $('body').animate({
+            scrollTop: scrollLink,
+        });
+    });    
+}
+
     
 
 /********** GO PAGINAS **********/

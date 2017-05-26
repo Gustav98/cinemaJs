@@ -254,7 +254,8 @@ content: "";
 }
 
 #lugaresEscolhidos li{
-    list-style: none;
+    margin-left: -10px;
+    list-style-image: url(../img/ticket.png);
 }
 
 
@@ -396,7 +397,7 @@ content: "";
     background-color:#2A2A2A;
     color:white;
     font-size: 14px;
-    padding:50px 0px 20px;
+    padding: 30px 0px 20px;
     font-weight:bold;
     font-family: 'Didact Gothic', sans-serif;
     text-align: center;
