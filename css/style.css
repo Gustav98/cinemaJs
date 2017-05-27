@@ -99,10 +99,14 @@ content: "";
 /* FILMES */
 
 #filmes h1 img{
-    margin-left: 5px;
     width:55px;
     padding:5px;
     height:auto;
+    margin-left: -325px;
+}
+
+#filmes h1{
+    padding-left:45px;
 }
 
 .filme{
@@ -265,30 +269,46 @@ content: "";
     list-style-image: url(../img/ticket.png);
 }
 
-#lugares h1 img{
-    margin-left: 5px;
+#lugares h1 .icone{
     width:60px;
     padding:5px;
+    margin-left: -385px;
+    height:auto;
 }
+
+#lugares h1{
+    padding-left:45px;
+}
+
 
 /*Ingressos*/
 
-#ingresso h1 img{
-    margin-left: 5px;
+#ingresso h1 .icone{
     width:45px;
     padding:3px;
     height:auto;
+    margin-left: -225px;
 }
+
+#ingresso h1{
+    padding-left:45px;
+}
+
+
 
 
 /* INFO/SINOPSE */
 
 
-#sessao h1 img{
-    margin-left: 5px;
+#sessao .icone{
+    margin-left: -275px;
     width:50px;
     padding:5px;
     height:auto;
+}
+
+#sessao h1{
+    padding-left:45px;
 }
 
 .logo-background{
@@ -352,11 +372,16 @@ content: "";
 
 /*Finalizar*/
 
-#finalizar h1 img{
-    margin-left: 5px;
+#finalizar h1 .icone{
     width:37px;
     height:auto;
+    margin-left: -205px;
 }
+
+#finalizar h1{
+    padding-left:35px;
+}
+
 
 .card{
     padding:3px;
