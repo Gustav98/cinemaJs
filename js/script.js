@@ -337,6 +337,89 @@ function main(){
            target.appendChild(option);
         }); 
     }
+    
+    // VALIDAÇÃO DOS CAMPOS
+    var valida = false;
+    // numero do cartão
+    document.getElementById("numCartao").addEventListener("blur", function(e){
+        var campo = this.value;
+        if(campo.length < 19 || campo.length > 19){
+            this.style.backgroundColor = "#d9534f";
+            valida = false;
+        }
+        else{
+            this.style.backgroundColor = "white";
+            valida = true;
+        }
+    });
+    // nome do cartão
+    document.getElementById("nomeCartao").addEventListener("blur", function(e){
+        var campo = this.value;
+        if(campo.length > 50 || campo.length === 0){
+            this.style.backgroundColor = "#d9534f";
+            valida = false;
+        }
+        else{
+            this.style.backgroundColor = "white";
+            valida = true;
+        }
+    });
+    // mes validade
+    document.getElementById("mesCartao").addEventListener("blur", function(e){
+        var campo = this.value;
+        if(campo.length > 2 || campo > 12 || campo < 1){
+            this.style.backgroundColor = "#d9534f";
+            valida = false;
+        }
+        else{
+            this.style.backgroundColor = "white";
+            valida = true;
+        }
+    });
+    // ano validade
+    document.getElementById("anoCartao").addEventListener("blur", function(e){
+        var campo = this.value;
+        if(campo.length > 4 || campo.legth < 4 || campo > 2025 || campo < 2017){
+            this.style.backgroundColor = "#d9534f";
+            valida = false;
+        }
+        else{
+            this.style.backgroundColor = "white";
+            valida = true;
+        }
+    });
+    // CVV
+    document.getElementById("cvv").addEventListener("blur", function(e){
+        var campo = this.value;
+        if(campo.length > 3 || campo.length < 3){
+            this.style.backgroundColor = "#d9534f";
+            valida = false;
+        }
+        else{
+            this.style.backgroundColor = "white";
+            valida = true;
+        }
+    });
+    // btn finalizar
+    document.getElementById("cartaoFinalizar").addEventListener("click", function(e){
+        var cartao = document.getElementById("cartao");
+        var inputs = cartao.querySelectorAll("input");
+        var selects = cartao.querySelectorAll("select");
+        var inputsArr = Array.prototype.slice.call(inputs);
+        var selectsArr = Array.prototype.slice.call(selects);
+        inputsArr.map(function(x){
+            if(x.value === 0){return valida=false}
+        });
+        selectsArr.map(function(x){
+            if(x.value === "mes" || x.value === "ano"){return valida=false}
+        });
+        if(valida === false){
+            alert("Preencha os campos corretamente!")
+        }
+        else{
+            window.location = "finalizado.html";
+        }
+    });
 }
 
 
@@ -439,3 +522,10 @@ function scroll(){
    setTimeout(function(){ window.location = "index.html#filmes"; }, 3000);
 });
 */
+
+// JQUERY MASK
+
+$(document).ready(function(){
+   $('#numCartao').mask('0000 0000 0000 0000');
+   $('#cvv').mask('000');
+});

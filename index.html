@@ -2,6 +2,10 @@
 <html>
     <head>
         <meta charset="utf-8">
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.0/jquery.min.js"></script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+        <script type="text/javascript" src="js/script.js"></script>
+        <script type="text/javascript" src="js/jquery.mask.js"></script>
         <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/5.0.0/normalize.css" type="text/css" />
         <link rel="stylesheet" href="css/style.css" type="text/css" /> 
@@ -170,15 +174,17 @@
                         <hr>
                         <div id="cartao">
                             <p><input type="text" id="numCartao" placeholder="Numero do Cartão de Crédito" class="form-control" required></p>
-                            <p><input type="text" id="nomeCartao" placeholder="Nome como esta no Cartão" class="form-control" required></p>
+                            <p><input type="text" id="nomeCartao" placeholder="Nome como esta no Cartão" class="form-control" maxlength="50" required></p>
                             <p><select id="mesCartao" class="form-control" required></select></p>
                             <p><select id="anoCartao" class="form-control" required></select></p>
-                            <p><input type="text" id="cvv" class="form-control" placeholder="CVV" maxlength="3" required></p>
-                            <p><button class="btn btn-primary form-control">Finalizar</button></p>
+                            <p><input type="text" id="cvv" class="form-control" placeholder="CVV" required></p>
+                            <p><button class="btn btn-primary form-control" id="cartaoFinalizar">Finalizar</button></p>
                         </div>
                         <div id="boleto">
                             <button class="btn btn-default btn-lg glyphicon glyphicon-print" id="btnImprimir"></button>
                             <span class="Press">Imprimir Boleto</span>
+                            <br><br>
+                            <p><button href="finalizado.html" class="btn btn-primary form-control" id="boletoFinalizar">Finalizar</button></p>
                         </div>
                     </div>
                 </div>
@@ -186,18 +192,14 @@
             
         </div>
         
-        <!-- FOOTER -->
+        <!-- FOOTER 
         <footer class="footer">
             <div class="container-fluid">
                 <div class="col-lg-12">
                     <p class="image">© Copyright 2017 | Ingresso Cinema - Todos os direitos reservados.</p>
                 </div>
             </div>
-        </footer>
+        </footer>-->
         
     </body>
-    
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.0/jquery.min.js"></script>
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
-    <script type="text/javascript" src="js/script.js"></script>
 </html>
