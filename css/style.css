@@ -1,7 +1,9 @@
 @import url('https://fonts.googleapis.com/css?family=Bitter|Bungee+Inline|Didact+Gothic|Montserrat|Poppins');
 
 h1, h2{font-family: 'Bitter', serif;}
-
+#filmes, #sessao, #lugares, #ingresso, #finalizar{
+    display: none;
+}
 /* DIVS PRINCIPAIS */
 #login, #filmes, #sessao, #lugares, #ingresso, #finalizar{
     width: 100%;
@@ -13,10 +15,6 @@ h1, h2{font-family: 'Bitter', serif;}
     width: 100%;
     height: auto;
     padding: 20px; 
-}
-
-#filmes{
-    display: none;
 }
 
 #login{

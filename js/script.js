@@ -501,27 +501,39 @@ function fbLogout() {
 
 /********** SCROLL **********/
 function scroll(){
-    $(".intro-btn a, #filmes #rowFilmes a, #lugares a, #ingresso a, #sessao a").click(function(){
-
+    $(".intro-btn a").click(function(){
         document.getElementById("filmes").style.display = "block";
-        
-        var scrollLink = $($(this).attr("href")).offset().top;
-        $('body').animate({
-            scrollTop: scrollLink,
-        });
-    });    
+        scrollAnimate(this);
+    });
+    $("#filmes #rowFilmes a").click(function(){
+        document.getElementById("sessao").style.display = "block";
+        scrollAnimate(this);
+    });
+    $("#sessao a").click(function(){
+        document.getElementById("lugares").style.display = "block";
+        scrollAnimate(this);
+    });
+    $("#lugares a").click(function(){
+        document.getElementById("ingresso").style.display = "block";
+        scrollAnimate(this);
+    });
+    $("#ingresso a#goFinalizar").click(function(){
+        document.getElementById("finalizar").style.display = "block";
+        scrollAnimate(this);
+    });
+    $("#ingresso a#backLugares").click(function(){
+        document.getElementById("ingresso").style.display = "none";
+        document.getElementById("finalizar").style.display = "none";
+        scrollAnimate(this);
+    });
 }
 
-    
-
-/********** GO PAGINAS **********/
-
-/*document.getElementById("goFilmes").addEventListener("click", function(e){
-   var divFilmes = document.getElementById("filmes");
-   divFilmes.style.display = "block";
-   setTimeout(function(){ window.location = "index.html#filmes"; }, 3000);
-});
-*/
+function scrollAnimate(a){
+    var scrollLink = $($(a).attr("href")).offset().top;
+    $('body').animate({
+        scrollTop: scrollLink,
+    });
+}
 
 // JQUERY MASK
 
