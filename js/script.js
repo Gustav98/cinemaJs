@@ -135,6 +135,7 @@ function main(){
         theadTr.appendChild(theadTh);
     }
     thead.appendChild(theadTr);
+    thead.querySelector("th").innerHTML = "";
     
     // GERANDO O RESTO DA TABELA
     
@@ -156,14 +157,28 @@ function main(){
         }
     });
     
+    // TFOOT
+    var tfoot = document.createElement("tfoot");
+    var tfootTr = document.createElement("tr");
+    var tfootTd0 = document.createElement("th");
+    var tfootTd1 = document.createElement("th");
+    tfootTd1.setAttribute("colspan", "10");
+    tfootTd1.innerHTML = "TELA";
+    tfootTd1.style.background = "#111";
+    tfootTr.appendChild(tfootTd0);
+    tfootTr.appendChild(tfootTd1);
+    tfoot.appendChild(tfootTr);
+    
     divTable.appendChild(table)
     table.appendChild(thead);
     table.appendChild(tbody);
+    table.appendChild(tfoot);
     document.getElementById("tabelaLugares").appendChild(divTable);
     
     // CLICK DOS LUGARES
     
     var contLugares = 0;
+    document.getElementById("goIngressos").setAttribute("disabled", "true");
     var lugares = document.querySelectorAll("#tabelaLugares table tr td");
     var lugaresArr = Array.prototype.slice.call(lugares);
     lugaresArr.forEach(function(x){
@@ -177,11 +192,9 @@ function main(){
                 ul.removeChild(li);
                 contLugares--;
                 resultado[0].assentos.splice(contLugares, 1); // resultado -> assentos
-                /*for(var i = 0; i <= resultado[0].assentos; i++){
-                    if(i === x.id){
-                        resultado[0].assentos.splice(i, 1); // resultado -> assentos
-                    }
-                }*/
+                if(contLugares <= 0){
+                    document.getElementById("goIngressos").setAttribute("disabled", "true");
+                }
             }
             else{
                 var li = document.createElement("li");
@@ -193,6 +206,7 @@ function main(){
                 x.setAttribute("title", "escolhido");
                 resultado[0].assentos[contLugares] = x.id; // resultado -> assentos
                 contLugares++;
+                document.getElementById("goIngressos").removeAttribute("disabled");
             }
         });
     });
@@ -231,7 +245,6 @@ function main(){
             tbody.appendChild(tr);
         }
         ingressos();
-        //alert(resultado[0].assentos);
     });
     
     // onChange R.A
@@ -247,7 +260,8 @@ function main(){
                     var getVl = getTr.querySelector("span.vl"); 
                     var inputRa = document.createElement("input");
                     
-                    inputRa.setAttribute("class", "form-control");
+                    inputRa.setAttribute("class", "form-control inputRa");
+                    inputRa.setAttribute("maxlength", "11");
                     inputRa.setAttribute("placeholder", "Insira o R.A");
                     getSpan.parentNode.replaceChild(inputRa, getSpan);  
                     getVl.innerHTML = "10,00";
@@ -271,6 +285,15 @@ function main(){
     /**************** DIV FINALIZAR ****************/
     
     document.getElementById("goFinalizar").addEventListener("click", function(){
+        var raOK = true;
+        var ra = document.querySelectorAll(".inputRa");
+        var raArr = Array.prototype.slice.call(ra);
+        raArr.forEach(function(x){
+           if(x.legth > 11 || x.legth < 11){
+               raOK = false;
+           } 
+        });
+        
         var vlTotal = 0;
         var tbody = document.getElementById("qtdIngressos");
         var trs = tbody.querySelectorAll("tr");
@@ -417,19 +440,27 @@ function main(){
             alert("Preencha os campos corretamente!")
         }
         else{
-            window.location = "finalizado.html";
+            modalOk();
         }
     });
+    
+    document.getElementById("boletoFinalizar").addEventListener("click", function(e){
+        modalOk();
+    });
+    
+    function modalOk(){
+        document.getElementById("myModalLabel").innerHTML = resultado[0].filme;
+        document.querySelector(".modal-header").style.backgroundImage = "url("+resultado[0].img+")";
+        document.getElementById("modalP").innerHTML = "Compra finalizada com <b>sucesso</b>, obrigado e volte sempre!!!";
+        document.getElementById("modalFinalizar").addEventListener("click",function(e){
+           window.location = "index.html"; 
+        });
+        $('#myModal').modal('show');
+    }
 }
 
 
-
-
-
 /********** API DO FACEBOOK ************/
-
-
-
 
 // API DO FACEBOOK
 window.fbAsyncInit = function() {
